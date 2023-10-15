@@ -2,7 +2,7 @@
             <feed xmlns="http://www.w3.org/2005/Atom">
                 <title>Event Feed</title>
                 <id>http://localhost:3000/atom-feed</id>
-                <updated>2023-10-15T18:52:56.844Z</updated>
+                <updated>2023-10-15T21:00:43.502Z</updated>
                 <author>
                     <name>Lukas Daude</name>
                     <email>lukas.daude@gmail.com</email>

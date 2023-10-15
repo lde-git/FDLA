@@ -8,6 +8,7 @@ const fs = require('fs');
 
 const app = express();
 
+
 app.use(express.static('public'));
 app.use(express.static('views'));
 
@@ -74,8 +75,30 @@ app.post('/add-event', (req, res) => {
 
 
 app.get('/', (req, res) => {
-  res.send('Welcome to the event publishing web app!');
-});
+    res.send(`
+      <html>
+        <head>
+          <title>Welcome to the Event Publishing Web App</title>
+          <style>
+            body {
+              font-family: Arial, sans-serif;
+              text-align: center;
+              margin: 50px;
+            }
+          </style>
+        </head>
+        <body>
+          <h2>Welcome to the Event Publishing Web App!</h2>
+          <p>
+            <a href="/add-event">Add Event</a><br>
+            <a href="/atom-feed">ATOM Feed</a><br>
+          </p>
+        </body>
+      </html>
+    `);
+  });
+  
+  
 
 app.get('/events-list', (req, res) => {
     db.query('SELECT * FROM events', (err, rows) => {

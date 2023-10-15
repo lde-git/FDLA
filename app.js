@@ -1,8 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('./database.js');
 const atom = require('atom');
 const fs = require('fs');
+
 
 const app = express();
 

@@ -15,7 +15,7 @@ app.get('/atom-feed', (req, res) => {
         if (err) {
             throw err;
         }
-
+        //couldn't get ATOM to run so i wrote XML for the ATOM Feed 
         const feedXML = `<?xml version="1.0" encoding="utf-8"?>
             <feed xmlns="http://www.w3.org/2005/Atom">
                 <title>Event Feed</title>

@@ -37,7 +37,7 @@ app.post('/add-event', (req, res) => {
           }
 
           const eventId = result.insertId;
-          console.log(`Event added with ID: ${eventId}`);
+          console.log(`Event added with ID: ${uuid}`);
           res.send('Event added successfully!');
       }
   );
@@ -91,7 +91,7 @@ app.post('/add-xml', (req, res) => {
                                       }
 
                                       const eventId = result.insertId;
-                                      console.log(`Event added with ID: ${eventId}`);
+                                      console.log(`Event added with ID: ${id}`);
                                   }
                               );
                           }
@@ -141,11 +141,11 @@ app.get('/atom-feed', (req, res) => {
                         <title>${event.eventname}</title>
                         <link href="http://localhost:3000/event/${event.id}"/>
                         <id>urn:uuid:${event.id}</id>
-                        <published>${event.published}</published>
+                        <published>${new Date(event.published).toISOString()}</published>
                         <updated>${new Date(event.updated).toISOString()}</updated>
                         <summary>${event.summary}</summary>
                         <author>
-                          <name>${event.name}$</name>
+                          <name>${event.name}</name>
                         </author>
                     </entry>
                 `).join('')}

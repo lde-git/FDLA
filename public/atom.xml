@@ -1,75 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
             <feed xmlns="http://www.w3.org/2005/Atom">
-                <title>Event Feed</title>
+                <title>Events Feed</title>
                 <id>http://localhost:3000/atom-feed</id>
-                <updated>2023-10-15T21:00:43.502Z</updated>
-                <author>
-                    <name>Lukas Daude</name>
-                    <email>lukas.daude@gmail.com</email>
-                </author>
+                <updated>2023-10-22T21:18:23.353Z</updated>
+                
                 
                     <entry>
-                        <title>Dinner</title>
-                        <id>http://localhost:3000/event/1</id>
-                        <link href="http://localhost:3000/event/1"/>
-                        <content>Dinner</content>
-                        <updated>2023-10-02T22:00:00.000Z</updated>
-                    </entry>
-                
-                    <entry>
-                        <title>Dinner</title>
-                        <id>http://localhost:3000/event/2</id>
-                        <link href="http://localhost:3000/event/2"/>
-                        <content>Dinner</content>
+                        <title>Dinner111</title>
+                        <link href="http://localhost:3000/event/e999a14a-be28-4dbf-861d-8202a04aaa1d"/>
+                        <id>urn:uuid:e999a14a-be28-4dbf-861d-8202a04aaa1d</id>
+                        <published>Fri Jan 21 2000 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)</published>
                         <updated>2000-01-20T23:00:00.000Z</updated>
+                        <summary>Free flowers!</summary>
+                        <author>
+                          <name>Lukas$</name>
+                        </author>
                     </entry>
                 
                     <entry>
-                        <title>Dinner2</title>
-                        <id>http://localhost:3000/event/3</id>
-                        <link href="http://localhost:3000/event/3"/>
-                        <content>Dinner2</content>
-                        <updated>2023-10-28T22:00:00.000Z</updated>
-                    </entry>
-                
-                    <entry>
-                        <title>Playdate</title>
-                        <id>http://localhost:3000/event/4</id>
-                        <link href="http://localhost:3000/event/4"/>
-                        <content>Playdate</content>
-                        <updated>2023-12-18T23:00:00.000Z</updated>
-                    </entry>
-                
-                    <entry>
-                        <title>Test2</title>
-                        <id>http://localhost:3000/event/5</id>
-                        <link href="http://localhost:3000/event/5"/>
-                        <content>Test2</content>
-                        <updated>1999-01-20T23:00:00.000Z</updated>
-                    </entry>
-                
-                    <entry>
-                        <title>asdasdasd</title>
-                        <id>http://localhost:3000/event/6</id>
-                        <link href="http://localhost:3000/event/6"/>
-                        <content>asdasdasd</content>
+                        <title>Test</title>
+                        <link href="http://localhost:3000/event/f1dba9c7-2161-42ee-93b8-52022091e88b"/>
+                        <id>urn:uuid:f1dba9c7-2161-42ee-93b8-52022091e88b</id>
+                        <published>Tue Feb 21 1212 00:00:00 GMT+0053 (Mitteleuropäische Normalzeit)</published>
                         <updated>1212-02-20T23:06:32.000Z</updated>
+                        <summary>Free food</summary>
+                        <author>
+                          <name>Daniel$</name>
+                        </author>
+                    </entry>
+                
+                    <entry>
+                        <title>Garden night</title>
+                        <link href="http://localhost:3000/event/urn:uuid:75e661d3-9d63-46e2-89da-535b85b94e35"/>
+                        <id>urn:uuid:urn:uuid:75e661d3-9d63-46e2-89da-535b85b94e35</id>
+                        <published>Tue Oct 03 2023 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)</published>
+                        <updated>2023-10-03T22:00:00.000Z</updated>
+                        <summary>Free flowers!</summary>
+                        <author>
+                          <name>Julia Lang$</name>
+                        </author>
                     </entry>
                 
                     <entry>
                         <title>Dinner</title>
-                        <id>http://localhost:3000/event/7</id>
-                        <link href="http://localhost:3000/event/7"/>
-                        <content>Dinner</content>
+                        <link href="http://localhost:3000/event/926ca827-7780-46a8-9cea-2acd6d4f6a3f"/>
+                        <id>urn:uuid:926ca827-7780-46a8-9cea-2acd6d4f6a3f</id>
+                        <published>Fri Jan 21 2000 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)</published>
                         <updated>2000-01-20T23:00:00.000Z</updated>
-                    </entry>
-                
-                    <entry>
-                        <title>asdasd</title>
-                        <id>http://localhost:3000/event/8</id>
-                        <link href="http://localhost:3000/event/8"/>
-                        <content>asdasd</content>
-                        <updated>1212-12-11T23:06:32.000Z</updated>
+                        <summary>Free flowers!</summary>
+                        <author>
+                          <name>Lukas$</name>
+                        </author>
                     </entry>
                 
             </feed>

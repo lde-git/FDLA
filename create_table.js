@@ -4,8 +4,10 @@ const db = require('./database.js');
 db.query(`
   CREATE TABLE IF NOT EXISTS events (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255),
-    date DATE
+    eventname VARCHAR(255),
+    date DATE,
+    summary VARCHAR(255),
+    name VARCHAR(255)
   )
 `, (error, results, fields) => {
   if (error) {

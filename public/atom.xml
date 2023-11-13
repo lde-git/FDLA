@@ -1,44 +1,320 @@
 <?xml version="1.0" encoding="utf-8"?>
             <feed xmlns="http://www.w3.org/2005/Atom">
                 <title>Events Feed</title>
-                <id>http://localhost:3000/atom-feed</id>
-                <updated>2023-10-22T21:54:17.360Z</updated>
+                <id>urn:uuid:0d4db8b8-b668-4240-913f-1d1c90a6gfff</id>
+                <updated>2023-11-13T09:13:42.316Z</updated>
+                <link rel="self" href="https://fdla.vercel.app/atom.xml"/>
                 
                 
                     <entry>
-                        <title>Event1</title>
-                        <link href="http://localhost:3000/event/76653f9a-d3dc-4550-88f3-27221fb4495b"/>
-                        <id>urn:uuid:76653f9a-d3dc-4550-88f3-27221fb4495b</id>
-                        <published>2000-01-31T23:00:00.000Z</published>
-                        <updated>2000-01-31T23:00:00.000Z</updated>
-                        <summary>first test event</summary>
-                        <author>
-                          <name>Ben</name>
-                        </author>
+                        <title>Atom feed celebration</title>
+                        <id>urn:uuid:05e6fdac-89a4-433c-9d35-80c99611c5ee</id>
+                        <content></content>
+                        <published>2023-10-22T22:00:00.000Z</published>
+                        <updated>2023-11-05T23:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:d81b7e1b-3bc5-4a8b-afd2-c60b93022ded</id>
+                          <title>Events feed</title>
+                          <updated>2023-11-05T23:00:00.000Z</updated>
+                        </source>
                     </entry>
                 
                     <entry>
-                        <title>Event2</title>
-                        <link href="http://localhost:3000/event/003bc36c-8b50-4fc2-9a93-aae5ed0fc147"/>
-                        <id>urn:uuid:003bc36c-8b50-4fc2-9a93-aae5ed0fc147</id>
-                        <published>2000-01-01T23:00:00.000Z</published>
-                        <updated>2000-01-01T23:00:00.000Z</updated>
-                        <summary>second test event</summary>
-                        <author>
-                          <name>Dan</name>
-                        </author>
+                        <title>The Great Pillow Fight Extravaganza</title>
+                        <id>urn:uuid:0993c799-f6dd-49b8-8d11-78950c531df5</id>
+                        <content></content>
+                        <published>2023-10-28T22:00:00.000Z</published>
+                        <updated>2023-11-05T23:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:d81b7e1b-3bc5-4a8b-afd2-c60b93022ded</id>
+                          <title>Events feed</title>
+                          <updated>2023-11-05T23:00:00.000Z</updated>
+                        </source>
+                    </entry>
+                
+                    <entry>
+                        <title>TEST</title>
+                        <id>urn:uuid:0d4db8b8-a648-4140-913e-1d1c80a6ffff</id>
+                        <content></content>
+                        <published>2023-10-29T23:00:00.000Z</published>
+                        <updated>2023-11-05T23:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:d81b7e1b-3bc5-4a8b-afd2-c60b93022ded</id>
+                          <title>Events feed</title>
+                          <updated>2023-11-05T23:00:00.000Z</updated>
+                        </source>
                     </entry>
                 
                     <entry>
                         <title>Garden night</title>
-                        <link href="http://localhost:3000/event/urn:uuid:75e661d3-9d63-46e2-89da-535b85b94e35"/>
-                        <id>urn:uuid:urn:uuid:75e661d3-9d63-46e2-89da-535b85b94e35</id>
+                        <id>urn:uuid:1437885d-308d-421f-a217-1324b0876451</id>
+                        <content></content>
                         <published>2023-10-02T22:00:00.000Z</published>
-                        <updated>2023-10-03T22:00:00.000Z</updated>
-                        <summary>Free flowers!</summary>
-                        <author>
-                          <name>Julia Lang</name>
-                        </author>
+                        <updated>2023-11-05T23:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:d81b7e1b-3bc5-4a8b-afd2-c60b93022ded</id>
+                          <title>Events feed</title>
+                          <updated>2023-11-05T23:00:00.000Z</updated>
+                        </source>
+                    </entry>
+                
+                    <entry>
+                        <title>{"$":{"type":"html"}}</title>
+                        <id>urn:uuid:1ebcbe60-f3ca-488e-88ae-bb8fa6ede80b</id>
+                        <content></content>
+                        <published>2023-10-30T23:00:00.000Z</published>
+                        <updated>2023-11-05T23:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:d81b7e1b-3bc5-4a8b-afd2-c60b93022ded</id>
+                          <title>Events feed</title>
+                          <updated>2023-11-05T23:00:00.000Z</updated>
+                        </source>
+                    </entry>
+                
+                    <entry>
+                        <title>Atom feed celebration</title>
+                        <id>urn:uuid:351ff8ef-edfb-4fca-9186-96abaef2c3f0</id>
+                        <content>
+      Let's celebrate the deployed atom feed
+2023-10-30T14:00
+    </content>
+                        <published>2023-10-22T22:00:00.000Z</published>
+                        <updated>2023-10-22T22:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:d81b7e1b-3bc5-4a8b-afd2-c60b93022ded</id>
+                          <title>Events feed</title>
+                          <updated>2023-11-05T23:00:00.000Z</updated>
+                        </source>
+                    </entry>
+                
+                    <entry>
+                        <title>Kuchen</title>
+                        <id>urn:uuid:4fa9fe49-12ee-41a0-809b-221d6ef06bd7</id>
+                        <content>null</content>
+                        <published>2023-11-08T23:00:00.000Z</published>
+                        <updated>2023-11-08T23:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:e4bc7d8a-787f-4bd3-8c97-454ba700b0da</id>
+                          <title>Events feed</title>
+                          <updated>2023-10-03T22:00:00.000Z</updated>
+                        </source>
+                    </entry>
+                
+                    <entry>
+                        <title>{"_":"Test","$":{"type":"html"}}</title>
+                        <id>urn:uuid:6b559336-241a-4cc5-9678-bd5a757aef52</id>
+                        <content></content>
+                        <published>2023-10-30T23:00:00.000Z</published>
+                        <updated>2023-11-05T23:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:d81b7e1b-3bc5-4a8b-afd2-c60b93022ded</id>
+                          <title>Events feed</title>
+                          <updated>2023-11-05T23:00:00.000Z</updated>
+                        </source>
+                    </entry>
+                
+                    <entry>
+                        <title>Garden night</title>
+                        <id>urn:uuid:75e661d3-9d63-46e2-89da-535b85b94e35</id>
+                        <content></content>
+                        <published>2023-10-02T22:00:00.000Z</published>
+                        <updated>2023-11-05T23:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:d81b7e1b-3bc5-4a8b-afd2-c60b93022ded</id>
+                          <title>Events feed</title>
+                          <updated>2023-11-05T23:00:00.000Z</updated>
+                        </source>
+                    </entry>
+                
+                    <entry>
+                        <title>TEST</title>
+                        <id>urn:uuid:8939a16f-acb1-4516-9dc0-05e2f9770d27</id>
+                        <content></content>
+                        <published>2023-10-30T23:00:00.000Z</published>
+                        <updated>2023-11-05T23:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:d81b7e1b-3bc5-4a8b-afd2-c60b93022ded</id>
+                          <title>Events feed</title>
+                          <updated>2023-11-05T23:00:00.000Z</updated>
+                        </source>
+                    </entry>
+                
+                    <entry>
+                        <title>Super Hero Showdown</title>
+                        <id>urn:uuid:89c6ca7d-9c83-490f-9a17-5fc8efbb26b8</id>
+                        <content></content>
+                        <published>2023-10-28T22:00:00.000Z</published>
+                        <updated>2023-11-05T23:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:d81b7e1b-3bc5-4a8b-afd2-c60b93022ded</id>
+                          <title>Events feed</title>
+                          <updated>2023-11-05T23:00:00.000Z</updated>
+                        </source>
+                    </entry>
+                
+                    <entry>
+                        <title>{"_":"TEST","$":{"type":"html"}}</title>
+                        <id>urn:uuid:8ea3a4fd-6162-4195-9777-7e1dc7ed8988</id>
+                        <content></content>
+                        <published>2023-10-29T23:00:00.000Z</published>
+                        <updated>2023-11-05T23:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:d81b7e1b-3bc5-4a8b-afd2-c60b93022ded</id>
+                          <title>Events feed</title>
+                          <updated>2023-11-05T23:00:00.000Z</updated>
+                        </source>
+                    </entry>
+                
+                    <entry>
+                        <title>Test</title>
+                        <id>urn:uuid:93f82498-1c6e-47c3-8b17-c4f0c2b21151</id>
+                        <content></content>
+                        <published>2023-10-30T23:00:00.000Z</published>
+                        <updated>2023-11-05T23:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:d81b7e1b-3bc5-4a8b-afd2-c60b93022ded</id>
+                          <title>Events feed</title>
+                          <updated>2023-11-05T23:00:00.000Z</updated>
+                        </source>
+                    </entry>
+                
+                    <entry>
+                        <title>The Great Cake-off</title>
+                        <id>urn:uuid:95263874-50b0-45a4-a275-e164a01d3055</id>
+                        <content></content>
+                        <published>2023-10-28T22:00:00.000Z</published>
+                        <updated>2023-11-05T23:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:d81b7e1b-3bc5-4a8b-afd2-c60b93022ded</id>
+                          <title>Events feed</title>
+                          <updated>2023-11-05T23:00:00.000Z</updated>
+                        </source>
+                    </entry>
+                
+                    <entry>
+                        <title>Test</title>
+                        <id>urn:uuid:95b91249-1934-4884-ba0d-891a728b68f7</id>
+                        <content>null</content>
+                        <published>2023-11-08T23:00:00.000Z</published>
+                        <updated>2023-11-08T23:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:e4bc7d8a-787f-4bd3-8c97-454ba700b0da</id>
+                          <title>Events feed</title>
+                          <updated>2023-10-03T22:00:00.000Z</updated>
+                        </source>
+                    </entry>
+                
+                    <entry>
+                        <title>TEST</title>
+                        <id>urn:uuid:9d58eea7-af9e-40a4-b6a5-90ffafe46d40</id>
+                        <content></content>
+                        <published>2023-10-29T23:00:00.000Z</published>
+                        <updated>2023-11-05T23:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:d81b7e1b-3bc5-4a8b-afd2-c60b93022ded</id>
+                          <title>Events feed</title>
+                          <updated>2023-11-05T23:00:00.000Z</updated>
+                        </source>
+                    </entry>
+                
+                    <entry>
+                        <title>Kuchen</title>
+                        <id>urn:uuid:b6799e42-73ec-46c8-90aa-87bf781830d3</id>
+                        <content>null</content>
+                        <published>2023-11-08T23:00:00.000Z</published>
+                        <updated>2023-11-08T23:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:e4bc7d8a-787f-4bd3-8c97-454ba700b0da</id>
+                          <title>Events feed</title>
+                          <updated>2023-10-03T22:00:00.000Z</updated>
+                        </source>
+                    </entry>
+                
+                    <entry>
+                        <title>{"_":"TEST","$":{"type":"html"}}</title>
+                        <id>urn:uuid:bce67dfd-a806-4b1d-95bc-d9da7fb59bbc</id>
+                        <content></content>
+                        <published>2023-10-30T23:00:00.000Z</published>
+                        <updated>2023-11-05T23:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:d81b7e1b-3bc5-4a8b-afd2-c60b93022ded</id>
+                          <title>Events feed</title>
+                          <updated>2023-11-05T23:00:00.000Z</updated>
+                        </source>
+                    </entry>
+                
+                    <entry>
+                        <title>The Great Food Frenzy</title>
+                        <id>urn:uuid:bd4c6b1f-707a-4908-a45c-ef1eca6a00de</id>
+                        <content></content>
+                        <published>2023-10-28T22:00:00.000Z</published>
+                        <updated>2023-11-05T23:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:d81b7e1b-3bc5-4a8b-afd2-c60b93022ded</id>
+                          <title>Events feed</title>
+                          <updated>2023-11-05T23:00:00.000Z</updated>
+                        </source>
+                    </entry>
+                
+                    <entry>
+                        <title>{"_":"TEST","$":{"type":"html"}}</title>
+                        <id>urn:uuid:cd3bd394-2e91-486c-a427-36b58284a013</id>
+                        <content></content>
+                        <published>2023-10-29T23:00:00.000Z</published>
+                        <updated>2023-11-05T23:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:d81b7e1b-3bc5-4a8b-afd2-c60b93022ded</id>
+                          <title>Events feed</title>
+                          <updated>2023-11-05T23:00:00.000Z</updated>
+                        </source>
+                    </entry>
+                
+                    <entry>
+                        <title>The Event</title>
+                        <id>urn:uuid:d66801e1-b2d2-49f2-9043-eb5c784a9e11</id>
+                        <content></content>
+                        <published>2023-10-28T22:00:00.000Z</published>
+                        <updated>2023-11-05T23:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:d81b7e1b-3bc5-4a8b-afd2-c60b93022ded</id>
+                          <title>Events feed</title>
+                          <updated>2023-11-05T23:00:00.000Z</updated>
+                        </source>
+                    </entry>
+                
+                    <entry>
+                        <title>Doodle Dash</title>
+                        <id>urn:uuid:ff2590c6-aa50-43c5-b79b-791dce6824f0</id>
+                        <content></content>
+                        <published>2023-10-28T22:00:00.000Z</published>
+                        <updated>2023-11-05T23:00:00.000Z</updated>
+                        
+                        <source>
+                          <id>urn:uuid:d81b7e1b-3bc5-4a8b-afd2-c60b93022ded</id>
+                          <title>Events feed</title>
+                          <updated>2023-11-05T23:00:00.000Z</updated>
+                        </source>
                     </entry>
                 
             </feed>

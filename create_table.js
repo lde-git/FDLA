@@ -1,12 +1,14 @@
 const db = require('./database.js');
 
+
 // Create a table to store events
 db.query(`
   CREATE TABLE IF NOT EXISTS events (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id VARCHAR(36) PRIMARY KEY,
     eventname VARCHAR(255),
-    date DATE,
-    summary VARCHAR(255),
+    published DATE,
+    updated DATE,
+    summary VARCHAR(255) DEFAULT NULL,
     name VARCHAR(255)
   )
 `, (error, results, fields) => {
@@ -16,3 +18,5 @@ db.query(`
     console.log('Events table created or already exists.');
   }
 });
+
+

@@ -13,8 +13,6 @@ const { v4: uuidv4 } = require('uuid');
 const app = express();
 
 
-
-
 app.use(express.static('public'));
 app.use(express.static('views'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,12 +23,14 @@ app.get('/add-event', (req, res) => {
 });
 
 
+
 //On Form-Submit
 app.post('/add-event', (req, res) => {
   const { eventName, eventDate, eventSummary, userName } = req.body;
-  const uuid = uuidv4();
-  db.query('INSERT INTO events (id ,eventname, published, updated, summary, name) VALUES (?,?, ?, ?, ?, ?)',
-      [uuid, eventName, eventDate, eventDate, eventSummary, userName],
+  const uuid = "urn:uuid:"+uuidv4();
+  const sourceID = "https://fdla.vercel.app/atom.xml";
+  db.query('INSERT INTO events (id ,eventname, published, updated, content, sourceID, sourceTitle, sourceUpdated ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+      [uuid, eventName, eventDate, eventDate, eventSummary, sourceID, "Events Feed", eventDate  ],
       (err, result) => {
           if (err) {
               return console.error(err.message);
@@ -58,49 +58,69 @@ app.post('/add-xml', (req, res) => {
               if (err) {
                   return console.error(err.message);
               }
-              returnText= "XML data processed and events added successfully!";
+              returnText = "XML data processed and events added successfully!";
 
               const entries = result.feed.entry;
+              const sourceID = result.feed.id[0];
+              const sourceTitle = result.feed.title[0];
+              const sourceUpdated = result.feed.updated[0];
+
+
 
               entries.forEach(entry => {
-                  const title = entry.title[0];
-                  const link = entry.link[0].$.href;
                   const id = entry.id[0];
                   const published = entry.published[0];
-                  const updated = entry.updated[0];
-                  const summary = entry.summary[0];
-                  const author = entry.author[0].name[0];
-                  console.log("test1");
-                  // Check if the entry already exists in the database
-                  db.query('SELECT * FROM events WHERE id = ?',
-                      [id],
-                      (err, rows) => {
-                          if (err) {
-                              return console.error(err.message);
-                          }
-                          console.log("rows:"+rows.length);
+                  const updated = entry.updated[0]; 
+                  const title = entry.title ? (entry.title[0]._ ?  entry.title[0]._ : entry.title[0] ) : null;            
+                  const content = entry.summary ? (entry.summary[0]._ ? entry.summary[0]._ : null) : (entry.content ? (entry.content[0]._ ? entry.content[0]._ : "")  : "");
 
-                          if (rows.length === 0) {
-                            
-                              // Insert data into the database
-                              db.query('INSERT INTO events (id, eventname, published, updated, summary, name) VALUES (?, ?, ?, ?, ?, ?)',
-                                  [id, title, new Date(published), new Date(updated), summary, author],
+
+                  // Check if the entry already exists in the database
+                  db.query('SELECT * FROM events WHERE id = ?', [id], (err, rows) => {
+                      if (err) {
+                          return console.error(err.message);
+                      }
+
+                      if (rows.length === 0) {
+                          // Insert data into the database
+                          db.query('INSERT INTO events (id, eventname, published, updated, content, sourceID, sourceTitle, sourceUpdated) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+                              [id, title, new Date(published), new Date(updated), content, sourceID, sourceTitle, new Date(sourceUpdated)  ],
+                              (err, result) => {
+                                  if (err) {
+                                      return console.error(err.message);
+                                  }
+                                  const eventId = result.insertId;
+                                  console.log(`Event added with ID: ${id}`);
+                              }
+                          );
+                                        /*
+id VARCHAR(100) PRIMARY KEY,
+    eventname VARCHAR(255),
+    published DATE,
+    updated DATE,
+    content VARCHAR(255) DEFAULT NULL,
+    sourceID VARCHAR(100),
+    sourceTitle VARCHAR(255),
+    sourceUpdated DATE
+*/
+                      } else {
+                          // Check if the entry's "updated" field is later
+                          const existingUpdated = rows[0].updated;
+                          if (new Date(updated) > existingUpdated) {
+                              db.query('UPDATE events SET eventname = ?, published = ?, updated = ?, content = ?, sourceID = ?, sourceTitle = ?, sourceUpdated = ? WHERE id = ?',
+                                  [title, new Date(published), new Date(updated), content, sourceID, sourceTitle , new Date(sourceUpdated), id],
                                   (err, result) => {
                                       if (err) {
                                           return console.error(err.message);
                                       }
-
-                                      const eventId = result.insertId;
-                                      console.log(`Event added with ID: ${id}`);
+                                      console.log(`Event with ID ${id} updated`);
                                   }
                               );
-                          }
-
-                          else {
-                            console.log("failed to add");
+                          } else {
+                              console.log(`Event with ID ${id} already exists and is not updated.`);
                           }
                       }
-                  );
+                  });
               });
 
               res.send(returnText);
@@ -116,13 +136,6 @@ app.post('/add-xml', (req, res) => {
 
 
 
-
-
-
-
-
-
-
 // ATOM feed route
 app.get('/atom-feed', (req, res) => {
     db.query('SELECT * FROM events', (err, rows) => {
@@ -133,20 +146,23 @@ app.get('/atom-feed', (req, res) => {
         const feedXML = `<?xml version="1.0" encoding="utf-8"?>
             <feed xmlns="http://www.w3.org/2005/Atom">
                 <title>Events Feed</title>
-                <id>http://localhost:3000/atom-feed</id>
+                <id>urn:uuid:0d4db8b8-b668-4240-913f-1d1c90a6gfff</id>
                 <updated>${new Date().toISOString()}</updated>
+                <link rel="self" href="https://fdla.vercel.app/atom.xml"/>
                 
                 ${rows.map(event => `
                     <entry>
                         <title>${event.eventname}</title>
-                        <link href="http://localhost:3000/event/${event.id}"/>
-                        <id>urn:uuid:${event.id}</id>
-                        <published>${new Date(event.published).toISOString()}</published>
-                        <updated>${new Date(event.updated).toISOString()}</updated>
-                        <summary>${event.summary}</summary>
-                        <author>
-                          <name>${event.name}</name>
-                        </author>
+                        <id>${event.id}</id>
+                        <content>${event.content}</content>
+                        <published>${event.published.toISOString()}</published>
+                        <updated>${event.updated.toISOString()}</updated>
+                        
+                        <source>
+                          <id>${event.sourceID}</id>
+                          <title>${event.sourceTitle}</title>
+                          <updated>${event.sourceUpdated.toISOString()}</updated>
+                        </source>
                     </entry>
                 `).join('')}
             </feed>`;
@@ -155,13 +171,6 @@ app.get('/atom-feed', (req, res) => {
         res.sendFile(__dirname + '/public/atom.xml');
     });
 });
-
-
-
-
-
-
-
 
 
 
@@ -198,18 +207,18 @@ app.get('/', (req, res) => {
 
 
 
-
-
+// Create a table to store events
 // Create a table to store events
 db.query(`
   CREATE TABLE IF NOT EXISTS events (
-    id VARCHAR(45),
+    id VARCHAR(100) PRIMARY KEY,
     eventname VARCHAR(255),
     published DATE,
     updated DATE,
-    summary VARCHAR(255),
-    name VARCHAR(255)
-
+    content VARCHAR(500) DEFAULT NULL,
+    sourceID VARCHAR(100),
+    sourceTitle VARCHAR(255),
+    sourceUpdated DATE
   )
 `, (error, results, fields) => {
   if (error) {
@@ -218,6 +227,8 @@ db.query(`
     console.log('Events table created or already exists.');
   }
 });
+
+
 
 
 

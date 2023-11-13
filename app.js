@@ -72,8 +72,9 @@ app.post('/add-xml', (req, res) => {
                   const published = entry.published[0];
                   const updated = entry.updated[0]; 
                   const title = entry.title ? (entry.title[0]._ ?  entry.title[0]._ : entry.title[0] ) : null;            
-                  const content = entry.summary ? (entry.summary[0]._ ? entry.summary[0]._ : null) : (entry.content ? (entry.content[0]._ ? entry.content[0]._ : "")  : "");
+                  const content = entry.summary ? (entry.summary[0]._ ? entry.summary[0]._ : entry.summary[0]) : (entry.content ? (entry.content[0]._ ? entry.content[0]._ : "")  : "");
 
+            
 
                   // Check if the entry already exists in the database
                   db.query('SELECT * FROM events WHERE id = ?', [id], (err, rows) => {
@@ -93,16 +94,7 @@ app.post('/add-xml', (req, res) => {
                                   console.log(`Event added with ID: ${id}`);
                               }
                           );
-                                        /*
-id VARCHAR(100) PRIMARY KEY,
-    eventname VARCHAR(255),
-    published DATE,
-    updated DATE,
-    content VARCHAR(255) DEFAULT NULL,
-    sourceID VARCHAR(100),
-    sourceTitle VARCHAR(255),
-    sourceUpdated DATE
-*/
+
                       } else {
                           // Check if the entry's "updated" field is later
                           const existingUpdated = rows[0].updated;

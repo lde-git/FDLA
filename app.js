@@ -145,7 +145,7 @@ app.get('/atom-feed', (req, res) => {
                 ${rows.map(event => `
                     <entry>
                         <title>${event.eventname}</title>
-                        <id>${event.id}</id>
+                        <id>${event.id}</id> 
                         <content>${event.content}</content>
                         <published>${event.published.toISOString()}</published>
                         <updated>${event.updated.toISOString()}</updated>
